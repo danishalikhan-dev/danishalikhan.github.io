@@ -1,16 +1,26 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Danish Ali Khan | IT Student & Developer</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Danish Ali Khan's personal portfolio. BS IT student exploring C++, AI, cybersecurity, and software development.">
+          content="Danish Ali Khan - BS IT student exploring C++, Artificial Intelligence, Cybersecurity, and Software Development.">
+
+    <meta name="theme-color" content="#0b1120">
+
+    <title>Danish Ali Khan | Developer Portfolio</title>
 
     <style>
+
+        /* =========================
+           GLOBAL STYLES
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -20,12 +30,13 @@
 
         :root {
             --bg: #0b1120;
+            --bg-secondary: #101a2d;
             --card: #111c30;
             --text: #f1f5f9;
             --muted: #94a3b8;
             --accent: #38bdf8;
             --purple: #818cf8;
-            --border: rgba(148, 163, 184, 0.15);
+            --border: rgba(148, 163, 184, 0.16);
         }
 
         body {
@@ -33,102 +44,23 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-        }
-
-        /* Navigation */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(12px);
-        }
-
-        nav {
-            min-height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        nav ul a {
-            color: var(--muted);
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        nav ul a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: var(--purple);
-            filter: blur(160px);
-            opacity: 0.15;
-            right: -100px;
-            top: 100px;
-        }
-
-        .hero-content {
-            position: relative;
-            max-width: 750px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 6px 15px;
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            color: var(--accent);
-            font-size: 13px;
-            margin-bottom: 25px;
-            background: rgba(56, 189, 248, 0.06);
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 7vw, 68px);
-            line-height: 1.2;
-            margin-bottom: 20px;
         }
 
         .gradient {
@@ -137,17 +69,173 @@
                 var(--accent),
                 var(--purple)
             );
+
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .hero p {
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(11, 17, 32, 0.92);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(15px);
+        }
+
+        nav {
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            right: -100px;
+            top: 50px;
+
+            background: var(--purple);
+
+            filter: blur(160px);
+            opacity: 0.14;
+
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            left: -150px;
+            bottom: -100px;
+
+            background: var(--accent);
+
+            filter: blur(150px);
+            opacity: 0.08;
+
+            pointer-events: none;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+
+            position: relative;
+            z-index: 1;
+
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            flex: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            padding: 7px 16px;
+
+            border: 1px solid var(--border);
+            border-radius: 30px;
+
+            background: rgba(56, 189, 248, 0.06);
+
+            color: var(--accent);
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5.5vw, 68px);
+            line-height: 1.2;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
             color: var(--muted);
             font-size: 17px;
-            max-width: 650px;
+
             margin-bottom: 30px;
         }
+
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .buttons {
             display: flex;
@@ -156,34 +244,107 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
             padding: 12px 24px;
+
             border-radius: 8px;
+
+            font-size: 14px;
             font-weight: bold;
-            transition: 0.3s;
+
+            transition: all 0.3s ease;
         }
 
-        .primary {
+        .btn-primary {
             background: var(--accent);
             color: #08111f;
         }
 
-        .primary:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+
+            box-shadow: 0 8px 25px
+                rgba(56, 189, 248, 0.22);
         }
 
-        .secondary {
+        .btn-secondary {
             border: 1px solid var(--border);
             color: var(--text);
         }
 
-        .secondary:hover {
+        .btn-secondary:hover {
             border-color: var(--accent);
             color: var(--accent);
+
+            transform: translateY(-3px);
         }
 
-        /* Sections */
+        /* =========================
+           DEVELOPER AVATAR
+        ========================= */
+
+        .avatar-wrapper {
+            width: 310px;
+            height: 310px;
+
+            flex-shrink: 0;
+
+            padding: 8px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                var(--purple)
+            );
+
+            box-shadow:
+                0 0 50px rgba(56, 189, 248, 0.12),
+                0 0 100px rgba(129, 140, 248, 0.08);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            background: #111c30;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 90px 0;
@@ -196,181 +357,375 @@
 
         .section-title h2 {
             font-size: 36px;
-            margin-bottom: 10px;
+            line-height: 1.3;
+
+            margin-bottom: 12px;
         }
 
         .section-title p {
             color: var(--muted);
+            font-size: 15px;
         }
 
-        .about-text {
-            max-width: 800px;
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-box {
+            max-width: 850px;
             margin: auto;
-            text-align: center;
-            color: var(--muted);
-            font-size: 17px;
+
+            padding: 35px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
         }
 
-        /* Skills */
+        .about-box p {
+            color: var(--muted);
+            font-size: 16px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills-grid {
             display: grid;
+
             grid-template-columns: repeat(
                 auto-fit,
                 minmax(180px, 1fr)
             );
-            gap: 18px;
+
+            gap: 20px;
         }
 
-        .skill {
+        .skill-card {
             background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
+            border-radius: 14px;
+
+            padding: 28px 20px;
+
             text-align: center;
-            transition: 0.3s;
+
+            transition: all 0.3s ease;
         }
 
-        .skill:hover {
-            transform: translateY(-5px);
+        .skill-card:hover {
+            transform: translateY(-6px);
+
             border-color: var(--accent);
+
+            box-shadow: 0 10px 30px
+                rgba(56, 189, 248, 0.05);
         }
 
-        .skill h3 {
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
             font-size: 17px;
-            margin-bottom: 5px;
+            margin-bottom: 7px;
         }
 
-        .skill p {
+        .skill-card p {
             color: var(--muted);
             font-size: 13px;
         }
 
-        /* Projects */
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .projects-grid {
             display: grid;
+
             grid-template-columns: repeat(
                 auto-fit,
                 minmax(280px, 1fr)
             );
+
             gap: 25px;
         }
 
         .project-card {
+            position: relative;
+
             background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px;
-            transition: 0.3s;
+            border-radius: 16px;
+
+            padding: 30px;
+
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            right: -70px;
+            top: -70px;
+
+            background: var(--accent);
+
+            filter: blur(90px);
+            opacity: 0.08;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
             border-color: var(--purple);
         }
 
         .project-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
+            font-size: 36px;
+            margin-bottom: 18px;
         }
 
         .project-card h3 {
-            font-size: 21px;
+            font-size: 22px;
             margin-bottom: 12px;
         }
 
         .project-card p {
             color: var(--muted);
-            margin-bottom: 20px;
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        .tech-stack span {
+            padding: 5px 11px;
+
+            border-radius: 20px;
+
+            background: rgba(56, 189, 248, 0.08);
+
+            color: var(--accent);
+
+            font-size: 12px;
         }
 
         .project-link {
             color: var(--accent);
-            font-weight: bold;
             font-size: 14px;
+            font-weight: bold;
+
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            text-decoration: underline;
+            color: var(--purple);
         }
 
-        .tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .tech span {
-            font-size: 12px;
-            color: var(--accent);
-            background: rgba(56, 189, 248, 0.08);
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        /* Education */
+        /* =========================
+           EDUCATION
+        ========================= */
 
         .education-card {
-            max-width: 700px;
+            max-width: 750px;
             margin: auto;
-            padding: 30px;
+
+            padding: 35px;
+
             background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 16px;
+
             text-align: center;
+
+            transition: border-color 0.3s ease;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent);
+        }
+
+        .education-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
         .education-card h3 {
-            margin-bottom: 8px;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .education-card .university {
+            color: var(--accent);
+            font-weight: bold;
+
+            margin-bottom: 10px;
         }
 
         .education-card p {
             color: var(--muted);
+            font-size: 14px;
         }
 
-        /* Contact */
+        /* =========================
+           CONTACT
+        ========================= */
 
-        .contact-content {
-            text-align: center;
-            max-width: 650px;
+        .contact-box {
+            max-width: 750px;
             margin: auto;
+
+            padding: 45px 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            text-align: center;
         }
 
-        .contact-content p {
-            color: var(--muted);
-            margin-bottom: 25px;
+        .contact-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
         }
+
+        .contact-box h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            font-size: 15px;
+
+            margin-bottom: 28px;
+        }
+
+        .contact-buttons {
+            justify-content: center;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+            padding: 30px 0;
+
             border-top: 1px solid var(--border);
-            padding: 25px;
+
             text-align: center;
+
             color: var(--muted);
             font-size: 13px;
         }
 
-        /* Mobile */
+        footer a {
+            color: var(--accent);
+        }
 
-        @media (max-width: 650px) {
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-container {
+                gap: 35px;
+            }
+
+            .avatar-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
             nav {
                 flex-direction: column;
-                padding: 15px 0;
-            }
-
-            nav ul {
-                gap: 14px;
-                flex-wrap: wrap;
                 justify-content: center;
+
+                padding: 15px 0;
+                gap: 12px;
             }
 
-            nav ul a {
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+
+                gap: 12px 18px;
+            }
+
+            .nav-links a {
                 font-size: 12px;
             }
 
             .hero {
-                min-height: 75vh;
+                min-height: auto;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                padding-top: 55px;
+                padding-bottom: 65px;
+            }
+
+            .avatar-wrapper {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .buttons {
+                justify-content: center;
             }
 
             section {
@@ -378,238 +733,726 @@
             }
 
             .section-title h2 {
-                font-size: 29px;
+                font-size: 30px;
             }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .education-card {
+                padding: 25px;
+            }
+
+            .contact-box {
+                padding: 35px 22px;
+            }
+
         }
+
+        @media (max-width: 400px) {
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-links {
+                gap: 10px 14px;
+            }
+
+            .btn {
+                padding: 11px 18px;
+                font-size: 13px;
+            }
+
+        }
+
+        /* Accessibility */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="#home" class="logo">Danish.dev</a>
 
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
+        <div class="container">
+
+            <nav>
+
+                <a href="#home" class="logo">
+                    Danish.dev
+                </a>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#education">Education</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
                 </ul>
+
             </nav>
+
         </div>
+
     </header>
 
-    <!-- Hero -->
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
 
     <section class="hero" id="home">
-        <div class="container">
+
+        <div class="container hero-container">
+
             <div class="hero-content">
 
-                <span class="tag">
+                <span class="hero-tag">
                     BS IT Student | Aspiring Developer
                 </span>
 
                 <h1>
+
                     Hi, I'm Danish Ali Khan.
-                    <br>
+
                     <span class="gradient">
                         Building My Future in Tech.
                     </span>
+
                 </h1>
 
-                <p>
+                <p class="hero-description">
+
                     I'm an Information Technology student passionate
                     about programming, Artificial Intelligence,
                     Cybersecurity, and Software Development.
+
                     I enjoy learning new technologies and turning
                     ideas into practical projects.
+
                 </p>
 
                 <div class="buttons">
-                    <a href="#projects" class="btn primary">
+
+                    <a href="#projects"
+                       class="btn btn-primary">
+
                         Explore My Projects
+
                     </a>
 
-                    <a href="#contact" class="btn secondary">
+                    <a href="#contact"
+                       class="btn btn-secondary">
+
                         Get In Touch
+
                     </a>
+
                 </div>
 
             </div>
+
+
+            <!-- Custom Developer Avatar -->
+
+            <div class="avatar-wrapper">
+
+                <div class="avatar">
+
+                    <svg
+                        viewBox="0 0 300 300"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Illustrated developer avatar">
+
+                        <!-- Background -->
+
+                        <rect
+                            width="300"
+                            height="300"
+                            fill="#111c30"/>
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="125"
+                            fill="#1e293b"/>
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="100"
+                            fill="#24354d"/>
+
+
+                        <!-- Body -->
+
+                        <path
+                            d="M40 310
+                               C45 225 100 205 150 205
+                               C200 205 255 225 260 310"
+                            fill="#2563eb"/>
+
+
+                        <!-- Shirt -->
+
+                        <path
+                            d="M115 210
+                               L150 250
+                               L185 210
+                               L205 310
+                               L95 310 Z"
+                            fill="#f1f5f9"/>
+
+
+                        <!-- Neck -->
+
+                        <rect
+                            x="125"
+                            y="175"
+                            width="50"
+                            height="55"
+                            rx="15"
+                            fill="#c68b65"/>
+
+
+                        <!-- Face -->
+
+                        <ellipse
+                            cx="150"
+                            cy="135"
+                            rx="65"
+                            ry="75"
+                            fill="#d9a17b"/>
+
+
+                        <!-- Hair -->
+
+                        <path
+                            d="M85 135
+                               C65 60 110 35 155 40
+                               C220 35 235 90 215 145
+                               L200 105
+                               C175 95 130 95 105 110
+                               L95 150 Z"
+                            fill="#1f2937"/>
+
+
+                        <!-- Eyebrows -->
+
+                        <path
+                            d="M110 125 Q125 118 138 125"
+                            fill="none"
+                            stroke="#1f2937"
+                            stroke-width="5"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M162 125 Q175 118 190 125"
+                            fill="none"
+                            stroke="#1f2937"
+                            stroke-width="5"
+                            stroke-linecap="round"/>
+
+
+                        <!-- Eyes -->
+
+                        <ellipse
+                            cx="125"
+                            cy="140"
+                            rx="6"
+                            ry="8"
+                            fill="#1f2937"/>
+
+                        <ellipse
+                            cx="175"
+                            cy="140"
+                            rx="6"
+                            ry="8"
+                            fill="#1f2937"/>
+
+
+                        <!-- Nose -->
+
+                        <path
+                            d="M150 140 L145 158 L155 158"
+                            fill="none"
+                            stroke="#b77955"
+                            stroke-width="3"
+                            stroke-linecap="round"/>
+
+
+                        <!-- Smile -->
+
+                        <path
+                            d="M130 170
+                               Q150 185 170 170"
+                            fill="none"
+                            stroke="#7c3f2c"
+                            stroke-width="4"
+                            stroke-linecap="round"/>
+
+
+                        <!-- Small Decorative Code Symbol -->
+
+                        <g
+                            transform="translate(205 205)"
+                            fill="none"
+                            stroke="#38bdf8"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M-10 -10 L-20 0 L-10 10"/>
+
+                            <path d="M10 -10 L20 0 L10 10"/>
+
+                            <path d="M5 -15 L-5 15"/>
+
+                        </g>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- About -->
+
+    <!-- =========================
+         ABOUT ME
+    ========================= -->
 
     <section id="about">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>About <span class="gradient">Me</span></h2>
-                <p>A little about my journey in technology</p>
+
+                <h2>
+                    About <span class="gradient">Me</span>
+                </h2>
+
+                <p>
+                    A little about my journey in technology
+                </p>
+
             </div>
 
-            <div class="about-text">
-                <p>
-                    I am a BS Information Technology student at
-                    Allama Iqbal Open University (AIOU), Pakistan.
-                    I am developing my programming and problem-solving
-                    skills through university coursework and personal
-                    projects.
-                </p>
 
-                <br>
+            <div class="about-box">
 
                 <p>
-                    My interests include Artificial Intelligence,
-                    Cybersecurity, and Software Development.
-                    My goal is to become a skilled IT professional
-                    and contribute to meaningful technology projects.
+
+                    Hello! I'm <span class="about-highlight">
+                    Danish Ali Khan</span>, a BS Information
+                    Technology student at Allama Iqbal Open
+                    University (AIOU), Pakistan.
+
                 </p>
+
+                <p>
+
+                    I'm developing my programming and
+                    problem-solving skills through university
+                    coursework, practical assignments,
+                    and personal projects.
+
+                </p>
+
+                <p>
+
+                    My interests include
+                    <span class="about-highlight">
+                    Artificial Intelligence</span>,
+                    <span class="about-highlight">
+                    Cybersecurity</span>, and
+                    <span class="about-highlight">
+                    Software Development</span>.
+
+                </p>
+
+                <p>
+
+                    My goal is to become a skilled IT professional,
+                    continue learning new technologies, and
+                    contribute to meaningful projects.
+
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- Skills -->
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
 
     <section id="skills">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>My <span class="gradient">Skills</span></h2>
-                <p>Technologies and areas I am exploring</p>
+
+                <h2>
+                    My <span class="gradient">Skills</span>
+                </h2>
+
+                <p>
+                    Technologies and areas I'm exploring
+                </p>
+
             </div>
+
 
             <div class="skills-grid">
 
-                <div class="skill">
-                    <h3>💻 C++</h3>
-                    <p>Programming Fundamentals</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        💻
+                    </div>
+
+                    <h3>C++</h3>
+
+                    <p>
+                        Programming Fundamentals
+                    </p>
+
                 </div>
 
-                <div class="skill">
-                    <h3>☕ Java</h3>
-                    <p>Programming Practice</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        ☕
+                    </div>
+
+                    <h3>Java</h3>
+
+                    <p>
+                        Programming Practice
+                    </p>
+
                 </div>
 
-                <div class="skill">
-                    <h3>🌐 Web Development</h3>
-                    <p>HTML, CSS, Web Basics</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        HTML, CSS, Web Basics
+                    </p>
+
                 </div>
 
-                <div class="skill">
-                    <h3>🤖 Artificial Intelligence</h3>
-                    <p>Learning AI Concepts</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🤖
+                    </div>
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Learning AI Concepts
+                    </p>
+
                 </div>
 
-                <div class="skill">
-                    <h3>🔐 Cybersecurity</h3>
-                    <p>Security Fundamentals</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🔐
+                    </div>
+
+                    <h3>Cybersecurity</h3>
+
+                    <p>
+                        Security Fundamentals
+                    </p>
+
                 </div>
 
-                <div class="skill">
-                    <h3>🛠️ Git & GitHub</h3>
-                    <p>Version Control</p>
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🛠️
+                    </div>
+
+                    <h3>Git & GitHub</h3>
+
+                    <p>
+                        Version Control
+                    </p>
+
                 </div>
+
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- Projects -->
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
     <section id="projects">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>My <span class="gradient">Projects</span></h2>
-                <p>Some of my programming work</p>
+
+                <h2>
+                    My <span class="gradient">Projects</span>
+                </h2>
+
+                <p>
+                    Some of my programming work
+                </p>
+
             </div>
+
 
             <div class="projects-grid">
 
+
+                <!-- Student Marks Calculator -->
+
                 <div class="project-card">
 
-                    <div class="project-icon">🧮</div>
+                    <div class="project-icon">
+                        🧮
+                    </div>
 
-                    <h3>Student Marks Calculator</h3>
+                    <h3>
+                        Student Marks Calculator
+                    </h3>
 
                     <p>
-                        A C++ application that calculates student
-                        marks, total, percentage, grade, and
-                        pass/fail status with input validation.
+
+                        A C++ program that calculates student
+                        marks, total, percentage, grade,
+                        and pass/fail status.
+
+                        Includes input validation and
+                        five-subject result calculation.
+
                     </p>
 
-                    <div class="tech">
+                    <div class="tech-stack">
+
                         <span>C++</span>
                         <span>Arrays</span>
                         <span>Loops</span>
+                        <span>Conditions</span>
+
                     </div>
 
                     <a
-                        href="https://github.com/danishalikhan-dev/BS-IT-Practice"
+                        href="https://github.com/danishalikhan-dev/BS-IT-Practice/blob/main/student_marks_calculator.cpp"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="project-link">
-                        View on GitHub →
+
+                        View Source Code →
+
                     </a>
 
                 </div>
+
+
+                <!-- Hello C++ -->
 
                 <div class="project-card">
 
-                    <div class="project-icon">👋</div>
+                    <div class="project-icon">
+                        👋
+                    </div>
 
-                    <h3>Hello C++</h3>
+                    <h3>
+                        Hello C++
+                    </h3>
 
                     <p>
-                        A beginner-friendly C++ program that
-                        welcomes users and introduces my
-                        programming learning journey.
+
+                        A beginner-friendly C++ program
+                        that welcomes users and introduces
+                        my programming learning journey.
+
+                        It demonstrates basic input,
+                        output, and strings.
+
                     </p>
 
-                    <div class="tech">
+                    <div class="tech-stack">
+
                         <span>C++</span>
+                        <span>Strings</span>
                         <span>Input / Output</span>
+
                     </div>
 
                     <a
-                        href="https://github.com/danishalikhan-dev/BS-IT-Practice"
+                        href="https://github.com/danishalikhan-dev/BS-IT-Practice/blob/main/hello.cpp"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="project-link">
-                        View on GitHub →
+
+                        View Source Code →
+
                     </a>
 
                 </div>
 
+
+                <!-- Portfolio Website -->
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                    <p>
+
+                        My personal portfolio website
+                        built to showcase my education,
+                        programming skills, and projects.
+
+                        Created using HTML and CSS
+                        and published with GitHub Pages.
+
+                    </p>
+
+                    <div class="tech-stack">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>GitHub Pages</span>
+
+                    </div>
+
+                    <a
+                        href="https://github.com/danishalikhan-dev/danishalikhan.github.io"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">
+
+                        View Source Code →
+
+                    </a>
+
+                </div>
+
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Education -->
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
 
     <section id="education">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>My <span class="gradient">Education</span></h2>
-                <p>Academic background</p>
+
+                <h2>
+                    My <span class="gradient">Education</span>
+                </h2>
+
+                <p>
+                    Academic background
+                </p>
+
             </div>
+
 
             <div class="education-card">
 
-                <h3>BS Information Technology</h3>
+                <div class="education-icon">
+                    🎓
+                </div>
 
-                <p>
+                <h3>
+                    BS Information Technology
+                </h3>
+
+                <p class="university">
+
                     Allama Iqbal Open University (AIOU)
+
                 </p>
 
                 <p>
@@ -619,65 +1462,133 @@
                 <br>
 
                 <p>
-                    Focused on programming, computer science
-                    fundamentals, and information technology.
+
+                    Learning programming, computer science
+                    fundamentals, networking, and
+                    information technology.
+
                 </p>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- Contact -->
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section id="contact">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>Get In <span class="gradient">Touch</span></h2>
-                <p>Let's connect and explore opportunities</p>
-            </div>
 
-            <div class="contact-content">
+                <h2>
+                    Get In <span class="gradient">Touch</span>
+                </h2>
 
                 <p>
-                    I'm interested in IT internships, learning
-                    opportunities, and collaborating on projects.
-                    Feel free to connect with me.
+                    Let's connect and explore opportunities
                 </p>
 
-                <div class="buttons"
-                     style="justify-content: center;">
+            </div>
+
+
+            <div class="contact-box">
+
+                <div class="contact-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Let's Build Something
+                    <span class="gradient">Together</span>
+                </h3>
+
+                <p>
+
+                    I'm interested in IT internships,
+                    learning opportunities, and
+                    collaborating on programming projects.
+
+                    Feel free to explore my GitHub
+                    profile and projects.
+
+                </p>
+
+
+                <div class="buttons contact-buttons">
 
                     <a
                         href="https://github.com/danishalikhan-dev"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn primary">
+                        class="btn btn-primary">
+
                         GitHub Profile
+
                     </a>
 
+
                     <a
-                        href="https://www.linkedin.com/"
+                        href="https://github.com/danishalikhan-dev/BS-IT-Practice"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn secondary">
-                        LinkedIn
+                        class="btn btn-secondary">
+
+                        Explore My Projects
+
                     </a>
 
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
-        <p>
-            © 2026 Danish Ali Khan.
-            Designed and built with HTML & CSS.
-        </p>
+
+        <div class="container">
+
+            <p>
+
+                © 2026 Danish Ali Khan.
+
+                Designed and built with
+                <span class="gradient">
+                    HTML & CSS
+                </span>.
+
+            </p>
+
+            <p style="margin-top: 8px;">
+
+                <a
+                    href="https://github.com/danishalikhan-dev"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    GitHub Profile
+
+                </a>
+
+            </p>
+
+        </div>
+
     </footer>
 
+
 </body>
+
 </html>
