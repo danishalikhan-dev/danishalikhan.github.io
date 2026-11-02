@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Danish Ali Khan | IT Student & Developer</title>
+
+    <meta name="description"
+          content="Danish Ali Khan's personal portfolio. BS IT student exploring C++, AI, cybersecurity, and software development.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #0b1120;
+            --card: #111c30;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --purple: #818cf8;
+            --border: rgba(148, 163, 184, 0.15);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--purple);
+            filter: blur(160px);
+            opacity: 0.15;
+            right: -100px;
+            top: 100px;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 750px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 15px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 25px;
+            background: rgba(56, 189, 248, 0.06);
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                90deg,
+                var(--accent),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: var(--accent);
+            color: #08111f;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+        }
+
+        .secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Sections */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 18px;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .skill h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--purple);
+        }
+
+        .project-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech span {
+            font-size: 12px;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.08);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Education */
+
+        .education-card {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        /* Contact */
+
+        .contact-content {
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Danish.dev</a>
+
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="tag">
+                    BS IT Student | Aspiring Developer
+                </span>
+
+                <h1>
+                    Hi, I'm Danish Ali Khan.
+                    <br>
+                    <span class="gradient">
+                        Building My Future in Tech.
+                    </span>
+                </h1>
+
+                <p>
+                    I'm an Information Technology student passionate
+                    about programming, Artificial Intelligence,
+                    Cybersecurity, and Software Development.
+                    I enjoy learning new technologies and turning
+                    ideas into practical projects.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn primary">
+                        Explore My Projects
+                    </a>
+
+                    <a href="#contact" class="btn secondary">
+                        Get In Touch
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About <span class="gradient">Me</span></h2>
+                <p>A little about my journey in technology</p>
+            </div>
+
+            <div class="about-text">
+                <p>
+                    I am a BS Information Technology student at
+                    Allama Iqbal Open University (AIOU), Pakistan.
+                    I am developing my programming and problem-solving
+                    skills through university coursework and personal
+                    projects.
+                </p>
+
+                <br>
+
+                <p>
+                    My interests include Artificial Intelligence,
+                    Cybersecurity, and Software Development.
+                    My goal is to become a skilled IT professional
+                    and contribute to meaningful technology projects.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span class="gradient">Skills</span></h2>
+                <p>Technologies and areas I am exploring</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill">
+                    <h3>💻 C++</h3>
+                    <p>Programming Fundamentals</p>
+                </div>
+
+                <div class="skill">
+                    <h3>☕ Java</h3>
+                    <p>Programming Practice</p>
+                </div>
+
+                <div class="skill">
+                    <h3>🌐 Web Development</h3>
+                    <p>HTML, CSS, Web Basics</p>
+                </div>
+
+                <div class="skill">
+                    <h3>🤖 Artificial Intelligence</h3>
+                    <p>Learning AI Concepts</p>
+                </div>
+
+                <div class="skill">
+                    <h3>🔐 Cybersecurity</h3>
+                    <p>Security Fundamentals</p>
+                </div>
+
+                <div class="skill">
+                    <h3>🛠️ Git & GitHub</h3>
+                    <p>Version Control</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span class="gradient">Projects</span></h2>
+                <p>Some of my programming work</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <div class="project-icon">🧮</div>
+
+                    <h3>Student Marks Calculator</h3>
+
+                    <p>
+                        A C++ application that calculates student
+                        marks, total, percentage, grade, and
+                        pass/fail status with input validation.
+                    </p>
+
+                    <div class="tech">
+                        <span>C++</span>
+                        <span>Arrays</span>
+                        <span>Loops</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/danishalikhan-dev/BS-IT-Practice"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">
+                        View on GitHub →
+                    </a>
+
+                </div>
+
+                <div class="project-card">
+
+                    <div class="project-icon">👋</div>
+
+                    <h3>Hello C++</h3>
+
+                    <p>
+                        A beginner-friendly C++ program that
+                        welcomes users and introduces my
+                        programming learning journey.
+                    </p>
+
+                    <div class="tech">
+                        <span>C++</span>
+                        <span>Input / Output</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/danishalikhan-dev/BS-IT-Practice"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">
+                        View on GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+
+    <section id="education">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My <span class="gradient">Education</span></h2>
+                <p>Academic background</p>
+            </div>
+
+            <div class="education-card">
+
+                <h3>BS Information Technology</h3>
+
+                <p>
+                    Allama Iqbal Open University (AIOU)
+                </p>
+
+                <p>
+                    Pakistan
+                </p>
+
+                <br>
+
+                <p>
+                    Focused on programming, computer science
+                    fundamentals, and information technology.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Get In <span class="gradient">Touch</span></h2>
+                <p>Let's connect and explore opportunities</p>
+            </div>
+
+            <div class="contact-content">
+
+                <p>
+                    I'm interested in IT internships, learning
+                    opportunities, and collaborating on projects.
+                    Feel free to connect with me.
+                </p>
+
+                <div class="buttons"
+                     style="justify-content: center;">
+
+                    <a
+                        href="https://github.com/danishalikhan-dev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn primary">
+                        GitHub Profile
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn secondary">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>
+            © 2026 Danish Ali Khan.
+            Designed and built with HTML & CSS.
+        </p>
+    </footer>
+
+</body>
+</html>
